@@ -9,7 +9,6 @@ const initialState = {
 
 export const fetchGreeting = createAsyncThunk('greeting/fetchGreeting', async () => {
   const response = await axios.get('http://127.0.0.1:3000/messages')
-  console.log(response.data)
     return response.data
 }
 );

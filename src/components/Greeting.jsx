@@ -1,9 +1,14 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const Greeting = () => {
+const {randomGreeting, isLoading} = useSelector((store) => store.greetings)  
+
+console.log(randomGreeting)
+
   return (
     <div>
-      Hello World
+     {isLoading ? <h1>Loading...</h1> : <h1>{randomGreeting.greetings}</h1>}
     </div>
   )
 }
